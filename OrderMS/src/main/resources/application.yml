@@ -1,12 +1,16 @@
 server:
   port: 8002
   
+  
+ravi-data: ${EUREKA_SERVER_ADDRESS}
+  
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone : http://eureka-node-0.eureka:8000/eureka,http://eureka-node-1.eureka:8000/eureka,http://eureka-node-2.eureka:8000/eureka
+#      defaultZone : http://eureka-node-0.eureka:8000/eureka,http://eureka-node-1.eureka:8000/eureka,http://eureka-node-2.eureka:8000/eureka
+       defaultZone: ${EUREKA_SERVER_ADDRESS}
 #      defaultZone : http://localhost:8010/eureka
   instance:
     preferIpAddress: true

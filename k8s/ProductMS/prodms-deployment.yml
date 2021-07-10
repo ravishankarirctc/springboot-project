@@ -23,6 +23,13 @@ spec:                                     # specification of "Deployment" object
           image: ravisaditya/prodms
           ports: 
             - containerPort: 8003
+          
+          env: 
+            - name: EUREKA_SERVER_ADDRESS
+              valueFrom: 
+                configMapKeyRef: 
+                    name: prodms-config-map
+                    key: eureka_server_address
                 
    
         

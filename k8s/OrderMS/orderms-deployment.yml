@@ -29,7 +29,13 @@ spec:                                     # specification of "Deployment" object
           image: ravisaditya/orderms
           ports: 
             - containerPort: 8002 
-            
+          env: 
+            - name: EUREKA_SERVER_ADDRESS
+              valueFrom: 
+                configMapKeyRef: 
+                    name: orderms-config-map
+                    key: eureka_server_address
+                
           # volumeMounts:
           #   - name: ms-storage
           #     mountPath: /var/storage

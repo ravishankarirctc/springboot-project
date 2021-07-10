@@ -27,6 +27,10 @@ public class MyController {
 //	@Value("${OKTA-API-KEY}")
 //    private String oktaApiKey;
 	
+	@Value("${ravi-data}")
+	private String raviData;
+	
+	
 	Logger log = LoggerFactory.getLogger(MyController.class);
 	Long srNo = 0l;
 
@@ -49,7 +53,12 @@ public class MyController {
 		
 		System.out.println("from Sysout: " + res.toString());
 		
+		System.out.println("###########-----###########");
+		System.out.println("raviData: " + raviData);
+		System.out.println("###########-----###########");
+		
 		//System.exit(0);
+		
 		
 		return res;
 	}

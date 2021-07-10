@@ -23,6 +23,12 @@ spec:                                     # specification of "Deployment" object
           image: ravisaditya/auth-server
           ports: 
             - containerPort: 8822
+          env: 
+            - name: EUREKA_SERVER_ADDRESS
+              valueFrom: 
+                configMapKeyRef: 
+                    name: auth-server-config-map
+                    key: eureka_server_address
                 
    
         

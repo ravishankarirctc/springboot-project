@@ -18,11 +18,23 @@ spec:                                     # specification of "Deployment" object
         component: zuul-server     # key to map with "Service" object
     
     spec:                                 # specification of Pod
-      containers:                         #container configuration
+      containers:                         #container configuration -
         - name: zuul-server-container
           image: ravisaditya/zuul-server
           ports: 
             - containerPort: 8008
+          env: 
+            - name: EUREKA_SERVER_ADDRESS
+              valueFrom: 
+                configMapKeyRef: 
+                    name: zuul-config-map
+                    key: eureka_server_address
+            
+            # - name: AWS_ECR_URL
+            #   valueFrom: 
+            #     secretKeyRef: 
+            #         name: zuul-config-map
+            #         key: aws-ecr-url
                 
    
         
