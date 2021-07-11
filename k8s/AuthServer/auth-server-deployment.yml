@@ -21,7 +21,7 @@ spec:                                     # specification of "Deployment" object
       containers:                         #container configuration
         - name: auth-server-container
           # image: ravisaditya/auth-server
-          image: 711669183136.dkr.ecr.ap-south-1.amazonaws.com/eureka-server    #for AWS
+          image: 711669183136.dkr.ecr.ap-south-1.amazonaws.com/auth-server    #for AWS
           imagePullPolicy: Always #what is the use of it?  Always enforce image force pull to avoid unexpected issues when k8s doesn't pull an image from a remote repository.
           ports: 
             - containerPort: 8822
